@@ -8,7 +8,6 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"github.com/gin-contrib/cors"
-	"github.com/joho/godotenv"
 
 	"os"
 )
@@ -27,12 +26,8 @@ type databaseConfig struct{
 	DatabaseSource string	
 }
 
-func NewConfig() *Config{
-	err :=godotenv.Load()
-
-	if err!=nil{
-		panic("Error loading .env file")
-	}
+func NewConfig() *Config{	
+	
 
 	c:=&Config{
 		Server: serverConfig{
