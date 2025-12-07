@@ -28,7 +28,7 @@ type databaseConfig struct{
 }
 
 func NewConfig() *Config{
-	err :=godotenv.Load("configs/dev.env")
+	err :=godotenv.Load()
 
 	if err!=nil{
 		panic("Error loading .env file")
