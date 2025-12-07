@@ -1,0 +1,53 @@
+# Binaries and build artifacts
+/bin/
+/build/
+/dist/
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go test / coverage
+coverage.out
+*.coverprofile
+
+# Dependency / vendor (optional if you vendor)
+vendor/
+
+# Environment / secrets
+.env
+.env.*
+.env.local
+*.key
+*.pem
+*.secret
+.secrets
+
+# Database files
+*.sqlite
+*.db
+
+# Logs
+*.log
+logs/
+
+# Docker overrides (local dev)
+docker-compose.override.yml
+docker-compose.local.yml
+
+# IDE/editor files
+.vscode/
+.idea/
+*.iml
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+.cache/
+tmp/

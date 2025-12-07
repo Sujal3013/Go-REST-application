@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: go_rest_api
+    ports:
+      - "8081:8081"
+    environment:
+      SERVER_ADDRESS: "0.0.0.0:8081"
+      CORS_ALLOWED_ORIGIN: "*"
+      DB_DRIVER: "postgres"
+      DB_SOURCE: "postgres://postgres:postgres@db:5432/gorest?sslmode=disable"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: gorest
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
