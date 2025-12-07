@@ -16,7 +16,7 @@ RUN go mod download
 COPY . .
 
 # Build binary from correct path
-RUN go build -o server ./internal/app/rest_api/main.go
+RUN go build -o server ./main.go
 
 # -------------------------
 # 2. Run Stage
