@@ -5,8 +5,8 @@ FROM golang:1.22-alpine AS build
 
 WORKDIR /app
 
-# Install git
-RUN apk add --no-cache git
+# Install git + build dependencies
+RUN apk add --no-cache git build-base bash ca-certificates
 
 # Copy go mod files first
 COPY go.mod go.sum ./
@@ -31,6 +31,8 @@ RUN apk add --no-cache ca-certificates
 # Copy binary from build stage
 COPY --from=build /app/server /app/server
 
+# Expose port
 EXPOSE 8081
 
+# Run server
 CMD ["./server"]

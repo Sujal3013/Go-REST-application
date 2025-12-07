@@ -19,7 +19,7 @@ vendor/
 # Environment / secrets
 .env
 .env.*
-.env.local
+**/dev.env
 *.key
 *.pem
 *.secret
